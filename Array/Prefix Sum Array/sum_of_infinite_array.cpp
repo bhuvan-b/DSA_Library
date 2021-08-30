@@ -77,3 +77,6 @@ vector<int> solve(ll arr[], ll n, vector<vector<ll>> &queries, ll q)
 	}
 	return ans;
 }
+
+// Time Complexity: O(N+Q)
+// Space Complexity: O(N)

@@ -1,9 +1,6 @@
-// Problem Statement
-/*
-Given an array “A” of N integers and you have also defined the new array “B” as a concatenation of array “A” for an infinite number of times.
-For example, if the given array “A” is [1,2,3] then, infinite array “B” is [1,2,3,1,2,3,1,2,3,.......].
-Now you are given Q queries, each query consists of two integers “L“ and “R”. Your task is to find the sum of the subarray from index “L” to “R” (both inclusive) in the infinite array “B” for each query.
+// Problem Statement Link: https://www.codingninjas.com/codestudio/guided-paths/data-structures-algorithms/content/118820/offering/1381865
 
+/*
 Approach:
 Find number of times the given array can come upto index z (found by z / n)
 Sum till index z from index 0: ((z/n) * presum[n-1]) + presum[z%n]

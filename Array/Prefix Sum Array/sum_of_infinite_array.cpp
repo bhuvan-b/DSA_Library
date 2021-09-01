@@ -1,8 +1,15 @@
 // Problem Statement
+/*
+Given an array “A” of N integers and you have also defined the new array “B” as a concatenation of array “A” for an infinite number of times.
+For example, if the given array “A” is [1,2,3] then, infinite array “B” is [1,2,3,1,2,3,1,2,3,.......].
+Now you are given Q queries, each query consists of two integers “L“ and “R”. Your task is to find the sum of the subarray from index “L” to “R” (both inclusive) in the infinite array “B” for each query.
 
-// Given an array “A” of N integers and you have also defined the new array “B” as a concatenation of array “A” for an infinite number of times.
-// For example, if the given array “A” is [1,2,3] then, infinite array “B” is [1,2,3,1,2,3,1,2,3,.......].
-// Now you are given Q queries, each query consists of two integers “L“ and “R”. Your task is to find the sum of the subarray from index “L” to “R” (both inclusive) in the infinite array “B” for each query.
+Approach:
+Find number of times the given array can come upto index z (found by z / n)
+Sum till index z from index 0: ((z/n) * presum[n-1]) + presum[z%n]
+
+Therefore for Sum from l to r: ( ((r/n) * presum[n-1]) + presum[r%n] ) - ( (((l-1)/n) * presum[n-1]) + presum[(l-1)%n] )
+*/
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -33,12 +40,6 @@ int main(int argc, char const *argv[])
 		cin >> l >> r;
 		queries.push_back({l, r});
 	}
-
-	// Approach:
-	// Find number of times the given array can come upto index z (found by z / n)
-	// Sum till index z from index 0: ((z/n) * presum[n-1]) + presum[z%n]
-
-	// Therefore for Sum from l to r: ( ((r/n) * presum[n-1]) + presum[r%n] ) - ( (((l-1)/n) * presum[n-1]) + presum[(l-1)%n] )
 
 	vector<int> ans = solve(arr, n, queries, q);
 
